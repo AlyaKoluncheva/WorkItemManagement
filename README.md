@@ -61,7 +61,7 @@ $Incorrect Inputs:$
   - Done
   - If you put a status that belongs to another Work Item, the program will ***throw an exception*** <br>
   
-```
+```java
 CREATEFEEDBACK <boardName> <title> <description> <rating> <status>
 ```
 
@@ -98,7 +98,7 @@ CREATESTORY <boardName> <title> <description> <priority> <size> <status> <assign
 - Steps
   - A list of strings
 
-```
+```java
 CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assignee> <List steps>
 ```
 
