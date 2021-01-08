@@ -8,8 +8,8 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
 
 ### With the commands from the table below we can create a new Team, Board and Member
 
-- The ***names*** should be between 5 and 15 characters!
-- To create a **board** we need to have first created a ***team***!
+- The ***names*** should be between 5 and 15 characters
+- To create a **board** we need to have first created a ***team***
 
 | Command: | Expected Output: |
 |----------|:----------:|
