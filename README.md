@@ -2,7 +2,7 @@
 Work Item Management System I created in Java for ***Telerik Academy Alpha Java 2020***. 
  This was the first bigger project I have created from scratch in Java. 
  The idea of it is to be something similar to Trello, but made in as a console app 
- It started as a small application but with time I decided to continue adding different functions and new knowlages.
+ It started as a small application but with time I decided to continue adding different functions and new knowledge.
 
 # Creating Team, Board and Member:
 
@@ -29,24 +29,23 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
 |----------|:----------:|
 | <code> CREATETEAM New </code> | Team name should be between 5 and 15 characters! <br> *(throws **IllegalArgumentException**)* |
 | <code> CREATENEWMEMBER Alex </code> | Name should be between 5 and 15 characters! <br> *(throws **IllegalArgumentException**)* |
-| <code> CREATENEWBOARDINTEAM UnexistingTeamName NewBoardName | Team UnexistingTeamName doesn't exist <br> *(throws **IllegalArgumentException**)* <br> If we try to create board to a team that doesnt exist
+| <code> CREATENEWBOARDINTEAM UnexistingTeamName NewBoardName | Team UnexistingTeamName doesn't exist <br> *(throws **IllegalArgumentException**)* <br> If we try to create board to a team that doesn't exist
 | <code> CREATENEWBOARDINTEAM NewTeamName AwesomeBoard   </code> | Board AwesomeBoard already exists <br> *(throws **IllegalArgumentException**)* <br> If a board with the same name has already been initialized |
 
 # Creating Work Items:
 
 ### All work items have a few key elements:
 - ***Board name***- each work item **must** be assigned to a board
-  - Only the members that are part of the team the boaard belongs to hav access to the elements from it;
+  - Only the members that are part of the team the board belongs to have access to the elements from it;
   - The Board keeps track of all changes that were made to the items in it
 - ***Title*** - the name used to refer to the work item
   - A String that should be **between 10 and 50 symbols**
 - ***Description***:
-  - String that can have length **between 10 and 500**
+  - String that can have a length **between 10 and 500**
 - ***Status***:
   - Which is different for the different work items
 - ***Unique ID*** - generated with UUID
-<br>
-<br>
+
 
 ## Crete Feedback:
 
@@ -57,7 +56,7 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
 - The accepted **statuses** for feedback are:
   - New
   - Scheduled
-  - Uncheduled
+  - Unscheduled
   - Done
   - If you put a status that belongs to another Work Item, the program will ***throw an exception*** <br>
   
