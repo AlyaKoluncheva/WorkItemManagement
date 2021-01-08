@@ -53,7 +53,7 @@ public class TeamImpl implements Team {
     // Setters:
     private void setName(String name) {
         Validation.validateNotNull(name);
-        Validation.validateValue(name, 15, 5, "Invalid Team name");
+        Validation.validateValue(name, 15, 5, "Team name should be between 5 and 15 characters!");
         this.name = name;
     }
 

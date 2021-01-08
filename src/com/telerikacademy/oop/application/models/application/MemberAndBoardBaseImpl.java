@@ -43,7 +43,7 @@ public abstract class MemberAndBoardBaseImpl implements MemberAndBoardBase {
     // Setters:
     private void setName(String name) {
         Validation.validateNotNull(name);
-        Validation.validateValue(name, 15, 5, "Invalid name");
+        Validation.validateValue(name, 15, 5, "Name should be between 5 and 15 characters!");
         this.name = name;
     }
 

@@ -81,7 +81,7 @@ public class CommandFactoryImpl implements CommandFactory {
                 return new ShowAllTeams(applicationRepository);
             case SHOWALLTEAMBOARDS:
                 return new ShowAllTeamBoards(applicationRepository);
-            case CREATEPERSON:
+            case CREATENEWMEMBER:
                 return new CreateMemberCommand(applicationFactory, applicationRepository);
             case ASSIGNWORKITEMTOMEMBER:
                 return new AssignWorkItemToMember(applicationRepository);

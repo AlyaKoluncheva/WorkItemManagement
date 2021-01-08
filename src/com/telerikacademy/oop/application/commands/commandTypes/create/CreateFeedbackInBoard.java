@@ -60,11 +60,11 @@ public class CreateFeedbackInBoard implements Command {
     private void parseParameters(List<String> parameters) {
         try {
 
+            boardName = parameters.get(0);
             title = parameters.get(1);
             description = parameters.get(2);
             rating = Integer.parseInt(parameters.get(3));
             status = Status.valueOf(parameters.get(4));
-            boardName = parameters.get(0);
 
         } catch (Exception e) {
             throw new IllegalArgumentException("Failed to parse CREATEFEEDBACK command parameters.");

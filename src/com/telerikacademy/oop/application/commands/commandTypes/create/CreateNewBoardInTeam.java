@@ -50,7 +50,7 @@ public class CreateNewBoardInTeam implements Command {
     private void validateInput(List<String> parameters) {
         if (parameters.size() != EXPECTED_NUMBER_OF_ARGUMENTS) {
             throw new IllegalArgumentException(
-                    String.format("%s%n, Expected: %d%n, Given: %d%n",
+                    String.format("%s%n Expected: %d%n Given: %d%n",
                             INVALID_NUMBER_OF_ARGUMENTS,
                             EXPECTED_NUMBER_OF_ARGUMENTS,
                             parameters.size()));
