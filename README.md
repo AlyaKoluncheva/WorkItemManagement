@@ -1,6 +1,8 @@
 # WorkItemManagement
 Console! Work Item Management System I created in Java for Telerik Academy Alpha Java 2020. 
-##Creating Team Board and Person (Member)
+
+
+## Creating Team, Board and Person (Member)
 
 CREATETEAM TeamAwesome
 
