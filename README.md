@@ -23,7 +23,7 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
 
 <br>
 
-$ Incorrect Inputs: $
+*** Incorrect Inputs: ***
 
 | Command: | Expected Output: |
 |----------|:----------:|
