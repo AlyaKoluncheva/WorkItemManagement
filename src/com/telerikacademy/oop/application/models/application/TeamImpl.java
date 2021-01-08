@@ -22,6 +22,8 @@ public class TeamImpl implements Team {
         setName(name);
     }
 
+
+    // Getters:
     @Override
     public String getName() {
         return name;
@@ -38,21 +40,6 @@ public class TeamImpl implements Team {
     }
 
     @Override
-    public void addMemberToTeam(Member member) {
-        members.add(member);
-    }
-
-    @Override
-    public void addBoard(Board board) {
-        boards.add(board);
-    }
-
-    @Override
-    public void changeName(String name) {
-        setName(name);
-    }
-
-    @Override
     public String getHistory() {
         StringBuilder builder = new StringBuilder();
 
@@ -63,10 +50,28 @@ public class TeamImpl implements Team {
         return builder.toString();
     }
 
+    // Setters:
     private void setName(String name) {
         Validation.validateNotNull(name);
         Validation.validateValue(name, 15, 5, "Invalid Team name");
         this.name = name;
+    }
+
+    // Add:
+    @Override
+    public void addMemberToTeam(Member member) {
+        members.add(member);
+    }
+
+    @Override
+    public void addBoard(Board board) {
+        boards.add(board);
+    }
+
+    // Additional methods:
+    @Override
+    public void changeName(String name) {
+        setName(name);
     }
 
     public String toString() {

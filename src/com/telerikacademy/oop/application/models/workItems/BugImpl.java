@@ -40,9 +40,18 @@ public class BugImpl extends AssignableImpl implements Bug {
         setSteps(steps);
     }
 
-    // getters:
+    // Getters:
+    @Override
+    public List<String> getSteps() {
+        return steps;
+    }
 
-    // setters:
+    @Override
+    public Severity getSeverity() {
+        return severity;
+    }
+
+    // Setters:
     private void setSteps(List<String> steps) {
         logHistory("Steps set to set to:" + steps);
         this.steps = steps;
@@ -53,12 +62,7 @@ public class BugImpl extends AssignableImpl implements Bug {
         this.severity = severity;
     }
 
-    public void changeSeverity(Severity severity) {
-        setSeverity(severity);
-    }
-
-    // additional functions:
-
+    // Event Log:
     @Override
     public String viewInfo() {
         String baseInfo = super.viewInfo();
@@ -77,14 +81,10 @@ public class BugImpl extends AssignableImpl implements Bug {
                 baseInfo);
     }
 
-    @Override
-    public List<String> getSteps() {
-        return steps;
-    }
+    // Additional methods:
 
-    @Override
-    public Severity getSeverity() {
-        return severity;
+    public void changeSeverity(Severity severity) {
+        setSeverity(severity);
     }
 
     @Override

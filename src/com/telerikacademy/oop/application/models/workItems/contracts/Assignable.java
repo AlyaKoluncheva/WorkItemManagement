@@ -4,8 +4,6 @@ import com.telerikacademy.oop.application.models.workItems.enums.Priority;
 
 public interface Assignable {
 
-
-
     Priority getPriority();
 
     String getAssignee();

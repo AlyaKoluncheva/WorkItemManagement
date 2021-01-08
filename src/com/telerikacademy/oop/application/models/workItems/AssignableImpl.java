@@ -22,6 +22,7 @@ public abstract class AssignableImpl extends WorkItemImpl implements Assignable 
         setPriority(priority);
     }
 
+    //Getters:
     @Override
     public Priority getPriority() {
         return priority;
@@ -32,11 +33,23 @@ public abstract class AssignableImpl extends WorkItemImpl implements Assignable 
         return assignee;
     }
 
+    @Override
+    public String getAssignableTitle() {
+        return getTitle();
+    }
+
+    @Override
+    public String getAssignableID() {
+        return getID();
+    }
+
+    // Setters:
     private void setPriority(Priority priority) {
         logHistory("Priority set to:" + priority);
         this.priority = priority;
     }
 
+    // Additional methods:
     public void changePriority(Priority priority) {
         setPriority(priority);
     }
@@ -53,13 +66,5 @@ public abstract class AssignableImpl extends WorkItemImpl implements Assignable 
         this.assignee = "";
     }
 
-    @Override
-    public String getAssignableTitle() {
-        return getTitle();
-    }
 
-    @Override
-    public String getAssignableID() {
-        return getID();
-    }
 }

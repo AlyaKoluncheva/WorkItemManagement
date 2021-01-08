@@ -32,7 +32,12 @@ public abstract class WorkItemImpl implements WorkItem {
         setBoardName(boardName);
     }
 
-    // getters:
+    // Getters:
+    @Override
+    public String getBoardName() {
+        return boardName;
+    }
+
     @Override
     public String getID() {
         return id;
@@ -53,11 +58,6 @@ public abstract class WorkItemImpl implements WorkItem {
         return description;
     }
 
-    @Override
-    public void addComment(EventLog comment) {
-        comments.add(comment);
-        logComments(String.format("Comment: %s", comment.getDescription()));
-    }
 
     @Override
     public String getComments() {
@@ -81,7 +81,10 @@ public abstract class WorkItemImpl implements WorkItem {
         return builder.toString();
     }
 
-    // setters:
+    // Setters:
+    private void setBoardName(String boardName) {
+        this.boardName = boardName;
+    }
 
     private void setTitle(String title) {
         validateTitle(title);
@@ -99,7 +102,11 @@ public abstract class WorkItemImpl implements WorkItem {
         this.description = description;
     }
 
-    // validations:
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    // Validations:
 
     private void validateTitle(String title) {
         Validation.validateValueInRange(
@@ -118,6 +125,11 @@ public abstract class WorkItemImpl implements WorkItem {
     }
 
     // Event Log:
+    @Override
+    public void addComment(EventLog comment) {
+        comments.add(comment);
+        logComments(String.format("Comment: %s", comment.getDescription()));
+    }
 
     public String viewComments() {
         return String.format("Comments: %s", comments);
@@ -135,10 +147,7 @@ public abstract class WorkItemImpl implements WorkItem {
         comments.add(new EventLog(event));
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
+    // Additional methods:
     public void changeStatus(Status status) {
         setStatus(status);
     }
@@ -149,12 +158,5 @@ public abstract class WorkItemImpl implements WorkItem {
                 title, description, status.toString(), boardName);
     }
 
-    @Override
-    public String getBoardName() {
-        return boardName;
-    }
 
-    private void setBoardName(String boardName) {
-        this.boardName = boardName;
-    }
 }

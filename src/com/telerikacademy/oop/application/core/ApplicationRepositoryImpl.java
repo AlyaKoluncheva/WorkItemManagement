@@ -70,6 +70,12 @@ public class ApplicationRepositoryImpl implements ApplicationRepository {
                 .findFirst().get();
     }
 
+    /**
+     * Array List of all Bugs and Stories
+     *
+     * @return Returns Bugs and Stories as an ArrayList
+     */
+
     @Override
     public List<Assignable> getAssignables() {
 
@@ -104,6 +110,16 @@ public class ApplicationRepositoryImpl implements ApplicationRepository {
 
         return assignableWorkItems.stream().filter(it -> it.getAssignableTitle().equals(name)).findFirst().get();
     }
+
+    /**
+     * Method that checks if there is an assignable with
+     * a given ID.
+     *
+     * @param id - ID that needs to be checked
+     *
+     * @throws IllegalArgumentException "No assignable item with this id"
+     * @return Work Items that belong to the Assigned person with id
+     */
 
     @Override
     public Assignable getAssignableById(String id) {

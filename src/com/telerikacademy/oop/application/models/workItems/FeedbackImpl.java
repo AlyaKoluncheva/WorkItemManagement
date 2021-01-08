@@ -20,20 +20,20 @@ public class FeedbackImpl extends WorkItemImpl implements Feedback {
         setRating(rating);
     }
 
+    // Getters:
     @Override
     public int getRating() {
         logHistory("Rating set to:" + rating);
         return rating;
     }
 
+    // Setters:
     private void setRating(int rating) {
         this.rating = rating;
     }
 
-    public void changeRating(int rating) {
-        setRating(rating);
-    }
 
+    // Event Log:
     @Override
     public String viewInfo() {
         String baseInfo = super.viewInfo();
@@ -50,6 +50,11 @@ public class FeedbackImpl extends WorkItemImpl implements Feedback {
 
         return String.format("Feedback comments: %s",
                 baseInfo);
+    }
+
+    // Additional methods:
+    public void changeRating(int rating) {
+        setRating(rating);
     }
 
     public String toString() {

@@ -49,6 +49,7 @@ public class StoryImpl extends AssignableImpl implements Story {
     }
 
     // Setters:
+
     private void setSize(Size size) {
         logHistory("Size set to:" + size);
         this.size = size;
@@ -58,8 +59,8 @@ public class StoryImpl extends AssignableImpl implements Story {
         setSize(size);
     }
 
-    // Additional functions:
 
+    // Event Log:
     @Override
     public String viewInfo() {
         String baseInfo = super.viewInfo();
@@ -70,6 +71,7 @@ public class StoryImpl extends AssignableImpl implements Story {
                 getDescription());
     }
 
+    // Additional functions:
     @Override
     public String viewComments() {
         String baseInfo = super.viewComments();

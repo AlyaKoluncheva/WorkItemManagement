@@ -5,15 +5,10 @@ public enum Severity {
 
     @Override
     public String toString() {
-        switch (this) {
-            case Critical:
-                return "Critical";
-            case Major:
-                return "Major";
-            case Minor:
-                return "Minor";
-            default:
-                return "Unknown";
-        }
+        return switch (this) {
+            case Critical -> "Critical";
+            case Major -> "Major";
+            case Minor -> "Minor";
+        };
     }
 }

@@ -5,16 +5,11 @@ public enum Size {
 
     @Override
     public String toString() {
-        switch (this) {
-            case Large:
-                return "Large";
-            case Medium:
-                return "Medium";
-            case Small:
-                return "Small";
-            default:
-                return "Unknown";
-        }
+        return switch (this) {
+            case Large -> "Large";
+            case Medium -> "Medium";
+            case Small -> "Small";
+        };
 
     }
 }

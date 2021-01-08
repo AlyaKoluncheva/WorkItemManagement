@@ -24,6 +24,7 @@ public abstract class MemberAndBoardBaseImpl implements MemberAndBoardBase {
         setName(name);
     }
 
+    // Getters:
     @Override
     public String getName() {
         return name;
@@ -39,6 +40,7 @@ public abstract class MemberAndBoardBaseImpl implements MemberAndBoardBase {
         return activityHistory;
     }
 
+    // Setters:
     private void setName(String name) {
         Validation.validateNotNull(name);
         Validation.validateValue(name, 15, 5, "Invalid name");
@@ -53,6 +55,7 @@ public abstract class MemberAndBoardBaseImpl implements MemberAndBoardBase {
         this.activityHistory = new ArrayList<>(activityHistory);
     }
 
+    // Additional methods:
     @Override
     public String toString() {
         return String.format(
