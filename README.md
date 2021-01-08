@@ -47,6 +47,7 @@ $Incorrect Inputs:$
 - ***Unique ID*** - generated with UUID
 <br>
 <br>
+
 ## Crete Feedback:
 
 ### In addition to the common fields feedback has some unique ones too:
@@ -79,7 +80,7 @@ CREATEFEEDBACK <boardName> <title> <description> <rating> <status>
   - Unique property of Bug and Story not found in Feedback
   - Needs to be a member if the member hasn't been created ***throws an exception***
 
-```
+```java 
 CREATESTORY <boardName> <title> <description> <priority> <size> <status> <assignee>
 ```
 
