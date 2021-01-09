@@ -93,7 +93,7 @@ CREATESTORY <boardName> <title> <description> <priority> <size> <status> <assign
   - Active
   - Fixed
 - Assignee
-  - Equivelent to the story
+  - Equivalent to the story
 - Steps
   - A list of strings
 
@@ -107,7 +107,7 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 |----------|:----------:|
 | <code> CREATEFEEDBACK AwesomeBoard FeedbackTitle FeedbackDescription 10 New </code> | Feedback with ID ***random id*** was created. |
 | <code> CREATESTORY AwesomeBoard ThisIsTheStoryName ThisIsTheDiscription High Large Done Alexandra </code> | Story with ID ***random id*** was created. |
-| <code> CREATEBUG AwesomeBoard BThisIsTheBugTitle DescriptionIsHere Medium Critical Fixed Alexandra step one step two step step  </code> | Bug with ID ***random id*** was created. |
+| <code> CREATEBUG AwesomeBoard BThisIsTheBugTitle DescriptionIsHere Medium Critical Fixed Alexandra step one two three  </code> | Bug with ID ***random id*** was created. |
 
 <br>
 
@@ -121,10 +121,10 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 |----------|:----------:|
 | <code> SHOWBOARDSACTIVITY AwesomeBoard </code> | List of all the changes made to the board with ***timestamps*** |
 | <code> SHOWTEAMACTIVITY TeamAwesome </code> | List of all the changes made to the team with ***timestamps*** |
-| <code> SHOWALLPEOPLE </code> | Alexandra (the only member wr have created so far) |
+| <code> SHOWALLPEOPLE </code> | Alexandra (the only member we have created so far) |
 | <code> SHOWALLTEAMS </code> | Team: NewTeamName (names of the created teams) |
 | <code> SHOWALLTEAMBOARDS </code> | List of all the team boards |
-| <code> SHOWALLTEAMMEMBERS </code> | List of all the team members ( we have to assign member to team with the command ADDMEMBERTOTEAM ) |
+| <code> SHOWALLTEAMMEMBERS </code> | List of all the team members ( we have to assign a member to the team with the command ADDMEMBERTOTEAM ) |
 
 
 <br>
@@ -179,7 +179,7 @@ CHANGESTATUSOFSTORY *id* Done
  
 ## Assign/Unassign Work Item:
 
-##  Example input and expeced input:
+##  Example input and expected output:
 ```java
 CREATETEAM NewTeamName
 CREATENEWMEMBER Alexandra
@@ -205,6 +205,6 @@ Bug with ID 0067e308-c796-4fa7-850a-b10984e0f543 was created.
 
 ```
 ### NB: 
-The id's will always be different. The ones in the output are just for illustation purposes!
+The id's will always be different. The ones in the output are just for illustration purposes!
 
 # Unit Testing:
