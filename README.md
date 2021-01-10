@@ -135,7 +135,7 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
   - SORTWORKITEMSBYSIZE
   - SORTWORKITEMSBYTITLE
   - SORTWORKITEMSBYSEVERIRY
-  - 
+  
 | Command: | Expected Output: |
 |----------|:----------:|
 | <code> SORTWORKITEMSBYRATING </code> | Sorts work items that ***have*** rating, ***ascending***|
@@ -143,41 +143,163 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 
 <br>
 
-// TODO <br>
-// TODO! finish the rest of the Commands! 
-// TODO <br>
-// TODO <br>
-// TODO <br>
-// TODO <br>
-// TODO <br>
-// TODO <br>
-// TODO <br>
 
 ## Change commands
 
 ### Status:
 
-CHANGESTATUSOFSTORY *id* NotDone
+On the table below I have shown the example commands for changing the status of a Story. The same way we can change the satuses of bugs and feedbacks.
+- *id* is the unique id given by the console when creating the Work Item
 
-CHANGESTATUSOFSTORY *id* InProgress
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> CHANGESTATUSOFSTORY *id* Done </code> | Story ID: *id* Status already set to: Done |
+| <code> CHANGESTATUSOFSTORY *id* NotDone </code> | Story ID: *id* changed status to: Not Done |
+| <code> CHANGESTATUSOFSTORY *id* InProgress </code> | Story ID: *id* changed status to: In Progress |
 
-CHANGESTATUSOFSTORY *id* Done
+<br>
+
+```java
+CHANGESTATUSOFFEEDBACK <id> <status>
+```
+<br>
 
 ### Priority:
 
+Examples below show how to change the priority of stories. It's done the same way for bugs.
+
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> CHANGEPRIORITYOFSTORY *id* High </code> | Story ID: *id* Priority already set to: High |
+| <code> CHANGEPRIORITYOFSTORY *id* Medium </code> | Story ID: *id* priority status to: Medium |
+| <code> CHANGEPRIORITYOFSTORY *id* Low </code> |  Story ID: *id* priority status to: Low |
+
+<br>
+
+```java
+CHANGEPRIORITYOFSTORY <id> <priority>
+CHANGEPRIORITYOFBug <id> <priority>
+```
+ <br>
+
 ### Severity:
- 
+
+- The message format is the same as status and priority
+```java
+CHANGESEVERITYOFBUG <id> <severity>
+ ```
+
 ### Rating: 
+- The message format is the same as status and priority
+```java
+CHANGERATINGOFFEEDBACK <id> <number/rating>
+ ```
 
 ### Size
+- The message format is the same as status and priority
+```java
+CHANGESIZEOFSTORY <id> <size>
+ ```
+
 
 ## Add:
 
+### Add Comment:
+
+  - Comments can be a single string only!
+  - An exception is being thrown when you put more than 1 String!
+
+
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> ADDCOMMENTTOWORKITEM ThisIsTheStoryName hi </code> | Comment hi was added to work item with title ThisIsTheStoryName |
+| <code> ADDCOMMENTTOWORKITEM ThisIsTheStoryName this is another comment </code> | Expected: 2 <br> Given: 5 |
+
+<br>
+
+```java
+ADDCOMMENTTOWORKITEM <Work Item Name> <Comment>
+ ```
+
+<br>
+
+### Add Member to Team:
+
+- This command add a member to an already existing team
+- If the member or the team don't exist an error messages are being displayed
+
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> ADDMEMBERTOTEAM NewTeamName Alexandra </code> | Member Alexandra was added to team NewTeamName |
+ | <code> ADDMEMBERTOTEAM NewTeamName NoUserName </code> |Member NoUserName doesn't exist  |
+| <code> ADDMEMBERTOTEAM noTeamName Alexandra </code> | Team noTeamName doesn't exist   |
+
+
+<br>
+
+```java
+ADDMEMBERTOTEAM <Team name> <Member name>
+ ```
+
+<br>
+
 ## Filter:
 
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> FILTERWORKITEMBYASSIGNEE Alexandra </code> |Bugs assigned to Alexandra: <br>   <br> Stories assigned to Alexandra: <br> ThisIsTheStoryName  |
+| <code> FILTERWORKITEMBYASSIGNEE NoName </code> | Member NoName doesn't exist  |
+
+<br>
+
+- Only Bugs and Stories have assignees so far;
+- It returns the name of the Bugs or Stories this assignee has;
+- If there isn't a Bug or Story an empty line is left;
+- If the member doesn't exist a message is being outputted;
+
 ## List:
+
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> LISTALLWORKITEMS </code> | Lists all the information about all created work items  |
+| <code> LISTALLBUGS </code> | Lists all the information about all created bugs  |
+| <code> LISTALLSTORIES </code> | Lists all the information about all created stories  |
+| <code> LISTALLFEEDBACK </code> | Lists all the information about all created feedbacks  |
+
+<br>
+
+Lists the information about given work item type:
+- Title
+- Description
+- Status
+- In Board: Board Name
+- And the unique ones for each category of work tuems
+
+  <br>
+
+
+```java
+LISTALLWORKITEMS
+LISTALLBUGS
+LISTALLSTORIES
+LISTALLFEEDBACK
+ ```
+
  
 ## Assign/Unassign Work Item:
+
+- For this example we create a new Story with title newStoryName
+- If member or item with this name don't exist an error message will be printed
+
+
+| Command: | Expected Output: |
+|----------|:----------:|
+| <code> ASSIGNWORKITEMTOMEMBER Alexandra newStoryName </code> | Item newStoryName assigned to Alexandra  |
+| <code> ASSIGNWORKITEMTOMEMBER Alexandra newStoryName123 </code> | There is no assignable item with name newStoryName123   
+| <code> ASSIGNWORKITEMTOMEMBER Alexandra1234 newStoryName </code> | Member Alexandra1234 not found  |
+
+<br>
+
 
 ##  Example input and expected output:
 ```java
@@ -189,6 +311,11 @@ CREATESTORY AwesomeBoard ThisIsTheStoryName ThisIsTheDiscription High Large Done
 CREATESTORY AwesomeBoard ANewStoryName SomeDescription Medium Small NotDone Alexandra
 CREATESTORY AwesomeBoard BeforeYouFinish BeforeYouFinishTheExam Low Small InProgress Alexandra
 CREATEBUG AwesomeBoard AThisIsTheBugTitle SomeDescription High Minor Active Alexandra step one step two
+
+
+CHANGEPRIORITYOFSTORY *id* High
+CHANGEPRIORITYOFSTORY *id* Low
+CHANGESTATUSOFSTORY *id* NotDone
 
 ```
 
@@ -202,9 +329,20 @@ Story with ID ca3611fa-61f3-42fa-988b-5c07a2b1e46f was created.
 Story with ID b4bc2881-890a-4675-bb45-d391cb4ceab2 was created.
 Story with ID 0c45aaf8-bb6a-4301-8de0-ab5314b62058 was created.
 Bug with ID 0067e308-c796-4fa7-850a-b10984e0f543 was created.
+Story ID: 0c45aaf8-bb6a-4301-8de0-ab5314b62058 Priority already set to: High
+Story ID: 0c45aaf8-bb6a-4301-8de0-ab5314b62058 Priority set to: Low
+Story ID: 0c45aaf8-bb6a-4301-8de0-ab5314b62058 Status set to: NotDone
 
 ```
 ### NB: 
 The id's will always be different. The ones in the output are just for illustration purposes!
 
 # Unit Testing:
+
+### So far I have created Unit testing (using JUnit) for:
+
+- Add Commands
+- Change Work Item Commands
+- Create Commands
+- Filter Commands
+- List Commands
