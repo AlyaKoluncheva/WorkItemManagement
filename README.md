@@ -9,7 +9,6 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
 - [Creating Work Items:](#creating-work-items-)
     + [All work items have a few key elements:](#all-work-items-have-a-few-key-elements-)
   * [Crete Feedback:](#crete-feedback-)
-    + [In addition to the common fields feedback has some unique ones too:](#in-addition-to-the-common-fields-feedback-has-some-unique-ones-too-)
   * [CreateStory:](#createstory-)
     + [Unique properties of Story:](#unique-properties-of-story-)
   * [CreateBug:](#createbug-)
@@ -32,11 +31,8 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
   * [Assign/Unassign Work Item:](#assign-unassign-work-item-)
   * [Example input and expected output:](#example-input-and-expected-output-)
     + [Output:](#output-)
-    + [NB:](#nb-)
 - [Unit Testing:](#unit-testing-)
     + [So far I have created Unit testing (using JUnit) for:](#so-far-i-have-created-unit-testing--using-junit--for-)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 # Creating Team, Board and Member:
