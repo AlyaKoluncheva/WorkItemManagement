@@ -5,14 +5,10 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
  It started as a small application but with time I decided to continue adding different functions and new knowledge.
 
 - [Creating Team, Board and Member:](#creating-team--board-and-member-)
-    + [With the commands from the table below we can create a new Team, Board and Member](#with-the-commands-from-the-table-below-we-can-create-a-new-team--board-and-member)
 - [Creating Work Items:](#creating-work-items-)
-    + [All work items have a few key elements:](#all-work-items-have-a-few-key-elements-)
   * [Crete Feedback:](#crete-feedback-)
   * [CreateStory:](#createstory-)
-    + [Unique properties of Story:](#unique-properties-of-story-)
   * [CreateBug:](#createbug-)
-    + [Unique properties of Bug:](#unique-properties-)
   * [Table with example commands on Work Items:](#table-with-example-commands-on-work-items-)
 - [Other Commands:](#other-commands-)
   * [Show commands:](#show-commands-)
@@ -30,7 +26,6 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
   * [List:](#list-)
   * [Assign/Unassign Work Item:](#assign-unassign-work-item-)
   * [Example input and expected output:](#example-input-and-expected-output-)
-    + [Output:](#output-)
 - [Unit Testing:](#unit-testing-)
 
 
