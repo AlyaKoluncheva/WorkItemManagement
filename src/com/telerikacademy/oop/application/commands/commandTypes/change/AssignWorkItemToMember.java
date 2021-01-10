@@ -50,7 +50,7 @@ public class AssignWorkItemToMember implements Command {
 
         applicationRepository.getMemberByName(name).addWorkItem(workItem);
 
-        return String.format(CommandConstants.MEMBER_CREATED_SUCCESS_MESSAGE, name);
+        return String.format("Item %s assigned to %s", workItemName, name);
     }
 
     private void validateInput(List<String> parameters) {
