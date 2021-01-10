@@ -12,7 +12,7 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
   * [CreateStory:](#createstory-)
     + [Unique properties of Story:](#unique-properties-of-story-)
   * [CreateBug:](#createbug-)
-    + [Unique properties:](#unique-properties-)
+    + [Unique properties of Bug:](#unique-properties-)
   * [Table with example commands on Work Items:](#table-with-example-commands-on-work-items-)
 - [Other Commands:](#other-commands-)
   * [Show commands:](#show-commands-)
@@ -22,7 +22,7 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
     + [Priority:](#priority-)
     + [Severity:](#severity-)
     + [Rating:](#rating-)
-    + [Size](#size)
+    + [Size:](#size)
   * [Add:](#add-)
     + [Add Comment:](#add-comment-)
     + [Add Member to Team:](#add-member-to-team-)
@@ -32,7 +32,6 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
   * [Example input and expected output:](#example-input-and-expected-output-)
     + [Output:](#output-)
 - [Unit Testing:](#unit-testing-)
-    + [So far I have created Unit testing (using JUnit) for:](#so-far-i-have-created-unit-testing--using-junit--for-)
 
 
 # Creating Team, Board and Member:
