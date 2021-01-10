@@ -4,6 +4,7 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
  The idea of it is to be something similar to Trello, but made in as a console app 
  It started as a small application but with time I decided to continue adding different functions and new knowledge.
 
+## Table of Contents:
 - [Creating Team, Board and Member:](#creating-team--board-and-member-)
 - [Creating Work Items:](#creating-work-items-)
   * [Crete Feedback:](#crete-feedback-)
