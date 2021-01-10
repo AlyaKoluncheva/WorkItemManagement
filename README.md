@@ -46,7 +46,6 @@ Work Item Management System I created in Java for ***Telerik Academy Alpha Java 
   - Which is different for the different work items
 - ***Unique ID*** - generated with UUID
 
-
 ## Crete Feedback:
 
 ### In addition to the common fields feedback has some unique ones too:
@@ -109,7 +108,6 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 | <code> CREATESTORY AwesomeBoard ThisIsTheStoryName ThisIsTheDiscription High Large Done Alexandra </code> | Story with ID ***random id*** was created. |
 | <code> CREATEBUG AwesomeBoard BThisIsTheBugTitle DescriptionIsHere Medium Critical Fixed Alexandra step one two three  </code> | Bug with ID ***random id*** was created. |
 
-<br>
 
 # Other Commands:
 
@@ -127,8 +125,6 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 | <code> SHOWALLTEAMMEMBERS </code> | List of all the team members ( we have to assign a member to the team with the command ADDMEMBERTOTEAM ) |
 
 
-<br>
-
 ## Sorting commands:
 
 - You can sort the same way like priority:
@@ -140,8 +136,6 @@ CREATEBUG <boardName> <title> <description> <priority> <severity> <status> <assi
 |----------|:----------:|
 | <code> SORTWORKITEMSBYRATING </code> | Sorts work items that ***have*** rating, ***ascending***|
 | <code> SORTWORKITEMSBYPRIORITY </code> | Sorts work items alphabetically |
-
-<br>
 
 
 ## Change commands
@@ -157,12 +151,11 @@ On the table below I have shown the example commands for changing the status of 
 | <code> CHANGESTATUSOFSTORY *id* NotDone </code> | Story ID: *id* changed status to: Not Done |
 | <code> CHANGESTATUSOFSTORY *id* InProgress </code> | Story ID: *id* changed status to: In Progress |
 
-<br>
 
 ```java
 CHANGESTATUSOFFEEDBACK <id> <status>
 ```
-<br>
+
 
 ### Priority:
 
@@ -174,13 +167,11 @@ Examples below show how to change the priority of stories. It's done the same wa
 | <code> CHANGEPRIORITYOFSTORY *id* Medium </code> | Story ID: *id* priority status to: Medium |
 | <code> CHANGEPRIORITYOFSTORY *id* Low </code> |  Story ID: *id* priority status to: Low |
 
-<br>
 
 ```java
 CHANGEPRIORITYOFSTORY <id> <priority>
 CHANGEPRIORITYOFBug <id> <priority>
 ```
- <br>
 
 ### Severity:
 
@@ -201,7 +192,6 @@ CHANGERATINGOFFEEDBACK <id> <number/rating>
 CHANGESIZEOFSTORY <id> <size>
  ```
 
-
 ## Add:
 
 ### Add Comment:
@@ -209,19 +199,15 @@ CHANGESIZEOFSTORY <id> <size>
   - Comments can be a single string only!
   - An exception is being thrown when you put more than 1 String!
 
-
 | Command: | Expected Output: |
 |----------|:----------:|
 | <code> ADDCOMMENTTOWORKITEM ThisIsTheStoryName hi </code> | Comment hi was added to work item with title ThisIsTheStoryName |
 | <code> ADDCOMMENTTOWORKITEM ThisIsTheStoryName this is another comment </code> | Expected: 2 <br> Given: 5 |
 
-<br>
 
 ```java
 ADDCOMMENTTOWORKITEM <Work Item Name> <Comment>
  ```
-
-<br>
 
 ### Add Member to Team:
 
@@ -234,14 +220,9 @@ ADDCOMMENTTOWORKITEM <Work Item Name> <Comment>
  | <code> ADDMEMBERTOTEAM NewTeamName NoUserName </code> |Member NoUserName doesn't exist  |
 | <code> ADDMEMBERTOTEAM noTeamName Alexandra </code> | Team noTeamName doesn't exist   |
 
-
-<br>
-
 ```java
 ADDMEMBERTOTEAM <Team name> <Member name>
  ```
-
-<br>
 
 ## Filter:
 
@@ -250,7 +231,6 @@ ADDMEMBERTOTEAM <Team name> <Member name>
 | <code> FILTERWORKITEMBYASSIGNEE Alexandra </code> |Bugs assigned to Alexandra: <br>   <br> Stories assigned to Alexandra: <br> ThisIsTheStoryName  |
 | <code> FILTERWORKITEMBYASSIGNEE NoName </code> | Member NoName doesn't exist  |
 
-<br>
 
 - Only Bugs and Stories have assignees so far;
 - It returns the name of the Bugs or Stories this assignee has;
@@ -275,9 +255,6 @@ Lists the information about given work item type:
 - In Board: Board Name
 - And the unique ones for each category of work tuems
 
-  <br>
-
-
 ```java
 LISTALLWORKITEMS
 LISTALLBUGS
@@ -285,7 +262,6 @@ LISTALLSTORIES
 LISTALLFEEDBACK
  ```
 
- 
 ## Assign/Unassign Work Item:
 
 - For this example we create a new Story with title newStoryName
@@ -297,8 +273,6 @@ LISTALLFEEDBACK
 | <code> ASSIGNWORKITEMTOMEMBER Alexandra newStoryName </code> | Item newStoryName assigned to Alexandra  |
 | <code> ASSIGNWORKITEMTOMEMBER Alexandra newStoryName123 </code> | There is no assignable item with name newStoryName123   
 | <code> ASSIGNWORKITEMTOMEMBER Alexandra1234 newStoryName </code> | Member Alexandra1234 not found  |
-
-<br>
 
 
 ##  Example input and expected output:
