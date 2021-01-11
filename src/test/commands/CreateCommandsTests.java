@@ -60,7 +60,7 @@ public class CreateCommandsTests {
         CreateTeamCommand createTeamCommand = new CreateTeamCommand(applicationFactory, applicationRepository);
         List<String> params = new ArrayList<>();
         params.add("testTeamName2");
-        Assertions.assertEquals("Team testTeamName2 created", createTeamCommand.execute(params));
+        Assertions.assertEquals("Team testTeamName2 created \n", createTeamCommand.execute(params));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class CreateCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("testTeamName");
         createTeamCommand.execute(params);
-        Assertions.assertEquals("Team testTeamName already exists", createTeamCommand.execute(params));
+        Assertions.assertEquals("Team testTeamName already exists \n", createTeamCommand.execute(params));
     }
 
     @Test
@@ -112,7 +112,7 @@ public class CreateCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("testTeamName");
         params.add("NewTestBoard");
-        Assertions.assertEquals("Board NewTestBoard created", createNewBoardInTeam.execute(params));
+        Assertions.assertEquals("Board NewTestBoard created \n", createNewBoardInTeam.execute(params));
     }
 
     @Test
@@ -121,7 +121,7 @@ public class CreateCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("testTeamName");
         params.add("testBoardName");
-        Assertions.assertEquals("Board testBoardName already exists", createNewBoardInTeam.execute(params));
+        Assertions.assertEquals("Board testBoardName already exists \n", createNewBoardInTeam.execute(params));
     }
 
     @Test
@@ -130,7 +130,7 @@ public class CreateCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("noSuchName");
         params.add("testBoardName2");
-        Assertions.assertEquals("Team noSuchName doesn't exist", createNewBoardInTeam.execute(params));
+        Assertions.assertEquals("Team noSuchName doesn't exist \n", createNewBoardInTeam.execute(params));
     }
 
     @Test
@@ -170,7 +170,7 @@ public class CreateCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("testMemberName");
         createMemberCommand.execute(params);
-        Assertions.assertEquals("Member testMemberName already exists", createMemberCommand.execute(params));
+        Assertions.assertEquals("Member testMemberName already exists \n", createMemberCommand.execute(params));
     }
 
     @Test
@@ -240,7 +240,7 @@ public class CreateCommandsTests {
         params.add("testFeedbackDescription");
         params.add("2");
         params.add("Done");
-        Assertions.assertEquals("Board testBoardNameNoneExistent doesn't exist", createFeedbackInBoard.execute(params));
+        Assertions.assertEquals("Board testBoardNameNoneExistent doesn't exist \n", createFeedbackInBoard.execute(params));
     }
 
     @Test
@@ -369,7 +369,7 @@ public class CreateCommandsTests {
         params.add("Step Two");
         params.add("Step Three");
 
-        Assertions.assertEquals("Board NonExisting doesn't exist",createBugInBoard.execute(params));
+        Assertions.assertEquals("Board NonExisting doesn't exist \n",createBugInBoard.execute(params));
     }
 
     @Test
@@ -441,7 +441,7 @@ public class CreateCommandsTests {
         params.add("Step Two");
         params.add("Step Three");
 
-        Assertions.assertEquals("Member NonExisting doesn't exist", createBugInBoard.execute(params));
+        Assertions.assertEquals("Member NonExisting doesn't exist \n", createBugInBoard.execute(params));
     }
     @Test
     public void createBug_command_InvalidStatusForBug() {
@@ -458,7 +458,7 @@ public class CreateCommandsTests {
         params.add("Step Two");
         params.add("Step Three");
 
-        Assertions.assertEquals("Invalid Bug Status", createBugInBoard.execute(params));
+        Assertions.assertEquals("Invalid Bug Status \n", createBugInBoard.execute(params));
     }
 
     //---------------------------------------------------------------
@@ -530,7 +530,7 @@ public class CreateCommandsTests {
         params.add("Large");
         params.add("Done");
         params.add("BeforeMember");
-        Assertions.assertEquals("Board testBoardNameNoneExistent doesn't exist", createStoryInBoard.execute(params));
+        Assertions.assertEquals("Board testBoardNameNoneExistent doesn't exist \n", createStoryInBoard.execute(params));
     }
 
     @Test

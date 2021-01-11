@@ -78,7 +78,7 @@ public class AddCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("testWorkItem");
         params.add("commentDescription");
-        Assertions.assertEquals("Comment commentDescription was added to work item with title testWorkItem",addCommentToWorkItem.execute(params));
+        Assertions.assertEquals("Comment commentDescription was added to work item with title testWorkItem \n",addCommentToWorkItem.execute(params));
     }
 
     @Test
@@ -107,7 +107,7 @@ public class AddCommandsTests {
         List<String> params = new ArrayList<>();
         params.add("beforeTeam");
         params.add("memberName");
-        Assertions.assertEquals("Member memberName was added to team beforeTeam",addMemberToTeam.execute(params));
+        Assertions.assertEquals("Member memberName was added to team beforeTeam \n",addMemberToTeam.execute(params));
     }
 
     @Test
