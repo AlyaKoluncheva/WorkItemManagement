@@ -6,7 +6,6 @@ public class CommandConstants {
     public static final String TEAM_EXISTS_ERROR_MESSAGE = "Team %s already exists \n";
     public static final String MEMBER_EXISTS_ERROR_MESSAGE = "Member %s already exists \n";
     public static final String BOARD_EXISTS_ERROR_MESSAGE = "Board %s already exists \n";
-    public static final String MEMBER_NOT_FOUND_ERROR_MESSAGE = "Member %s not found \n";
     public static final String ID_NOT_FOUND_ERROR_MESSAGE = "ID %s not found \n";
     public static final String TEAM_DOES_NOT_EXIST = "Team %s doesn't exist \n";
     public static final String BOARD_DOES_NOT_EXIST = "Board %s doesn't exist \n";

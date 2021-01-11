@@ -33,7 +33,7 @@ public class AssignWorkItemToMember implements Command {
     private String assignPerson(String name, String workItemName) {
 
         if (applicationRepository.getMembers().stream().noneMatch(it -> it.getName().equals(name))) {
-            return String.format(CommandConstants.MEMBER_NOT_FOUND_ERROR_MESSAGE, name);
+            return String.format(CommandConstants.MEMBER_NOT_FOUND, name);
         }
 
         Assignable assignableItem;
