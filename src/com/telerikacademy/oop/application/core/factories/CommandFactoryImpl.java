@@ -37,6 +37,8 @@ public class CommandFactoryImpl implements CommandFactory {
                 return new SortWorkItemsByTitle(applicationRepository);
             case SORTWORKITEMSBYRATING:
                 return new SortWorkingItemsByRating(applicationRepository);
+            case SHOWMEMBERACTIVITY:
+                return new ShowMemberActivity(applicationRepository);
             case SHOWTEAMACTIVITY:
                 return new ShowTeamActivity(applicationRepository);
             case SHOWBOARDSACTIVITY:
