@@ -29,7 +29,6 @@ public class ChangePriorityOfStory implements Command {
         return changePriority(id, priority);
     }
 
-
     private String changePriority(String id, Priority priority) {
 
         if (applicationRepository.getStories().stream().noneMatch(it -> it.getID().equals(id))) {

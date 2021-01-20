@@ -14,7 +14,6 @@ import java.util.List;
 
 public class ApplicationRepositoryImpl implements ApplicationRepository {
 
-    private final List<Member> ratings = new ArrayList<>();
     private final List<Member> members = new ArrayList<>();
     private final List<Team> teamList = new ArrayList<>();
     private final List<Board> boards = new ArrayList<>();
@@ -86,21 +85,46 @@ public class ApplicationRepositoryImpl implements ApplicationRepository {
 
         return result;
     }
+    /**
+     * Array List of all Boards
+     *
+     * @return Returns Boards as an ArrayList
+     */
 
     @Override
     public List<Board> getBoards() {
         return new ArrayList<>(boards);
     }
 
+    /**
+     * Array List of all Work Items
+     *
+     * @return Returns Work Items as an ArrayList
+     */
+
     @Override
     public List<WorkItem> getWorkItems() {
         return new ArrayList<>(workItems);
     }
 
+    /**
+     * Array List of all Stories
+     *
+     * @return Returns Stories as an ArrayList
+     */
+
     @Override
     public List<StoryImpl> getStories() {
         return new ArrayList<>(stories);
     }
+
+    /**
+     * Array List of all Work Items that have assignee with the given name
+     *
+     * @return Returns the title of the work item owned by the assignee
+     * @throws IllegalArgumentException when there isn't assignable item with
+     * the given title
+     */
 
     @Override
     public Assignable getAssignableByName(String name) {

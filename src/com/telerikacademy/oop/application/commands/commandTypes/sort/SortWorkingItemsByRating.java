@@ -26,7 +26,7 @@ public class SortWorkingItemsByRating implements Command {
         }
 
         List<FeedbackImpl> sortedUsers = feedbackList.stream()
-                .sorted(Comparator.comparing(FeedbackImpl::getRating))
+                .sorted(Comparator.comparing(FeedbackImpl::getRating).reversed())
                 .collect(Collectors.toList());
 
         sortedList = sortedUsers.toString();

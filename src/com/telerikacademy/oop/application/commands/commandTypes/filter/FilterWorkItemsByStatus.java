@@ -33,11 +33,16 @@ public class FilterWorkItemsByStatus implements Command {
             return CommandConstants.INVALID_STATUS;
         }
 
-        List<WorkItem> workItems = applicationRepository.getWorkItems().stream().filter(it -> it.getStatus() == status).collect(Collectors.toList());
+        List<WorkItem> workItems = applicationRepository.getWorkItems()
+                .stream()
+                .filter(it -> it.getStatus() == status)
+                .collect(Collectors.toList());
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("All workItems with status ").append(status.toString()).append(" \n");
+        stringBuilder.append("All workItems with status ")
+                .append(status.toString())
+                .append(" \n");
         workItems.forEach(it -> stringBuilder.append(it.getTitle()).append("\n"));
 
         return stringBuilder.toString();

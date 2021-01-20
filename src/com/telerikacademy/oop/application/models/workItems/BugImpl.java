@@ -6,9 +6,7 @@ import com.telerikacademy.oop.application.models.workItems.enums.*;
 
 import java.util.List;
 
-import static com.telerikacademy.oop.application.commands.CommandConstants.JOIN_DELIMITER;
-
-public class BugImpl extends AssignableImpl implements Bug {
+public class BugImpl extends AssignableBase implements Bug {
 
     List<String> steps;
     Severity severity;

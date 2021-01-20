@@ -37,25 +37,44 @@ public class FilterWorkItemsByStatusAndAssignee implements Command {
 
         assigneeName = parameters.get(1);
 
-        if (applicationRepository.getMembers().stream().noneMatch(it -> it.getName().equals(assigneeName))) {
+        if (applicationRepository.getMembers()
+                .stream()
+                .noneMatch(it -> it.getName()
+                        .equals(assigneeName))) {
             return String.format(CommandConstants.MEMBER_NOT_FOUND, assigneeName);
         }
 
-        List<BugImpl> bugs = applicationRepository.getBugs().stream().filter(it -> it.getAssignee().equals(assigneeName))
-                .filter(it -> it.getStatus().equals(status)).collect(Collectors.toList());
+        List<BugImpl> bugs = applicationRepository
+                .getBugs()
+                .stream()
+                .filter(it -> it.getAssignee().equals(assigneeName))
+                .filter(it -> it.getStatus().equals(status))
+                .collect(Collectors.toList());
 
-        List<StoryImpl> stories = applicationRepository.getStories().stream().filter(it -> it.getAssignee().equals(assigneeName))
-                .filter(it -> it.getStatus().equals(status)).collect(Collectors.toList());
+        List<StoryImpl> stories = applicationRepository
+                .getStories()
+                .stream()
+                .filter(it -> it.getAssignee().equals(assigneeName))
+                .filter(it -> it.getStatus().equals(status))
+                .collect(Collectors.toList());
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("Bugs assigned to ").append(assigneeName).append(" with status ").append(status.toString()).append("\n");
+        stringBuilder.append("Bugs assigned to ")
+                .append(assigneeName)
+                .append(" with status ")
+                .append(status.toString())
+                .append("\n");
 
         bugs.forEach(it -> stringBuilder.append(it.getTitle()).append(" "));
 
         stringBuilder.append("\n");
 
-        stringBuilder.append("Stories assigned to ").append(assigneeName).append(" with status ").append(status.toString()).append("\n");
+        stringBuilder.append("Stories assigned to ")
+                .append(assigneeName)
+                .append(" with status ")
+                .append(status.toString())
+                .append("\n");
 
         stories.forEach(it -> stringBuilder.append(it.getTitle()).append(" "));
 

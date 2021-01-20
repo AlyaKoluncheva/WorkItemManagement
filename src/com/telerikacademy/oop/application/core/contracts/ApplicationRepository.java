@@ -49,6 +49,8 @@ public interface ApplicationRepository {
 
     void addBug(BugImpl bug);
 
+    // Get IDs:
+
     Bug getBugID(String id);
 
     Story getStoryID(String id);

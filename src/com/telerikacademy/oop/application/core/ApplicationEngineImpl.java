@@ -40,7 +40,8 @@ public class ApplicationEngineImpl implements Engine {
                 processCommand(commandAsString);
 
             } catch (Exception ex) {
-                writer.writeLine(ex.getMessage() != null && !ex.getMessage().isEmpty() ? ex.getMessage() : ex.toString());
+                writer.writeLine(ex.getMessage() != null && !ex.getMessage()
+                        .isEmpty() ? ex.getMessage() : ex.toString());
             }
         }
     }

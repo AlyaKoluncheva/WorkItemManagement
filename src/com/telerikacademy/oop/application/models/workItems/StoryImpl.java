@@ -6,10 +6,8 @@ import com.telerikacademy.oop.application.models.workItems.enums.Priority;
 import com.telerikacademy.oop.application.models.workItems.enums.Size;
 import com.telerikacademy.oop.application.models.workItems.enums.Status;
 
-import static com.telerikacademy.oop.application.commands.CommandConstants.JOIN_DELIMITER;
 
-
-public class StoryImpl extends AssignableImpl implements Story {
+public class StoryImpl extends AssignableBase implements Story {
 
     private Size size;
 

@@ -4,9 +4,7 @@ import com.telerikacademy.oop.application.commands.CommandConstants;
 import com.telerikacademy.oop.application.models.workItems.contracts.Feedback;
 import com.telerikacademy.oop.application.models.workItems.enums.Status;
 
-import static com.telerikacademy.oop.application.commands.CommandConstants.JOIN_DELIMITER;
-
-public class FeedbackImpl extends WorkItemImpl implements Feedback {
+public class FeedbackImpl extends WorkItemBase implements Feedback {
     private int rating;
 
     public FeedbackImpl(String boardName,

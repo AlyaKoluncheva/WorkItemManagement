@@ -29,7 +29,6 @@ public class AssignWorkItemToMember implements Command {
         return assignPerson(name, workItemName);
     }
 
-
     private String assignPerson(String name, String workItemName) {
 
         if (applicationRepository.getMembers().stream().noneMatch(it -> it.getName().equals(name))) {

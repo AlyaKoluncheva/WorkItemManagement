@@ -29,25 +29,37 @@ public class FilterWorkItemsByAssignee implements Command {
 
         assigneeName = parameters.get(0);
 
-        if (applicationRepository.getMembers().stream().noneMatch(it -> it.getName().equals(assigneeName))) {
+        if (applicationRepository
+                .getMembers()
+                .stream()
+                .noneMatch(it -> it.getName().equals(assigneeName))) {
             return String.format(CommandConstants.MEMBER_NOT_FOUND, assigneeName);
         }
 
-        List<BugImpl> bugs = applicationRepository.getBugs().stream()
+        List<BugImpl> bugs = applicationRepository
+                .getBugs()
+                .stream()
                 .filter(it -> it.getAssignee().equals(assigneeName)).collect(Collectors.toList());
 
-        List<StoryImpl> stories = applicationRepository.getStories().stream()
-                .filter(it -> it.getAssignee().equals(assigneeName)).collect(Collectors.toList());
+        List<StoryImpl> stories = applicationRepository
+                .getStories()
+                .stream()
+                .filter(it -> it.getAssignee().equals(assigneeName))
+                .collect(Collectors.toList());
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append("Bugs assigned to ").append(assigneeName).append("\n");
+        stringBuilder.append("Bugs assigned to ")
+                .append(assigneeName)
+                .append("\n");
 
         bugs.forEach(it -> stringBuilder.append(it.getTitle()).append(" "));
 
         stringBuilder.append("\n");
 
-        stringBuilder.append("Stories assigned to ").append(assigneeName).append("\n");
+        stringBuilder.append("Stories assigned to ")
+                .append(assigneeName)
+                .append("\n");
 
         stories.forEach(it -> stringBuilder.append(it.getTitle()).append(" "));
 
